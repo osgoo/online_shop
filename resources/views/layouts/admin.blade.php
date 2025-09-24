@@ -9,12 +9,12 @@
 </head>
 <body>
     <div class="flex w-screen h-screen text-gray-400 bg-gray-900">
-        @include('layouts.inc.sidebar')
+        @include('layouts.inc.admin.sidebar')
 	<!-- Component Start -->
-            
+
             <div class="flex flex-col flex-grow">
-                @include('layouts.inc.header')
-                
+                @include('layouts.inc.admin.header')
+
                 @yield('content')
             </div>
             <!-- Component End  -->
@@ -27,5 +27,16 @@
         </div>
         <span class="text-sm ml-1 leading-none">@lofiui</span>
     </a>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                title: 'Амжилттай!',
+                text: '{{ session('success') }}',
+                icon: 'success',
+                confirmButtonText: 'Хаах',
+            });
+        </script>
+    @endif
 </body>
 </html>

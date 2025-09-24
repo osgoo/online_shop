@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\category;
- 
+
 class CategoryController extends Controller
 {
     public function create()
@@ -13,11 +13,11 @@ class CategoryController extends Controller
     }
     public function store(Request $request)
     {
-        $validated = $request->validate([        
+        $validated = $request->validate([
             'name' => ['required', 'string']
         ]);
         category::create($validated);
-        return redirect()->route('admin.category');
+        return redirect()->route('admin.category')->with('success', 'Категори амжилттай нэмэгдлээ');
     }
     public function edit($id){
         $category=category::findOrFail($id);
@@ -30,13 +30,14 @@ class CategoryController extends Controller
         $category=category::findOrFail($id);
         $category->update($validated);
         $category->save();
-        return redirect()->route('admin.category');
+        return redirect()->route('admin.category')->with('success', 'Категори амжилттай шинэчлэгдлээ');
 
     }
     public function destroy($id){
         $category = category::findOrFail($id);
         $category->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Категори амжилттай устгагплаа');
     }
+    
 
 }
