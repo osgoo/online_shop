@@ -27,7 +27,7 @@
                         <div class="flex flex-row gap-2">
                             <a href="{{ route('admin.product.show', ['id' => $product->id]) }}" class="px-3 py-1.5 rounded-md border text-sm hover:bg-gray-50 hover:text-black">Show</a>
                             <a href="{{ route('admin.product.edit', ['id' => $product->id]) }}" class="px-3 py-1.5 rounded-md border text-sm hover:bg-gray-50 hover:text-black">Edit</a>
-                            <form action="{{ route('admin.product.destroy', ['id'=>$product->id]) }}">
+                            <form action="{{ route('admin.product.destroy', ['id'=>$product->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="px-3 py-1.5 rounded-md border text-sm hover:bg-gray-50 hover:text-black">Delete</button>
