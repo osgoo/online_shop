@@ -1,6 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
+     <swiper-container class="mySwiper mt-4 mb-4">
+
+        <swiper-slide>
+            <img src="{{ asset('assets/images/img1.jpg') }}" width="100%" height="100%" alt="">
+        </swiper-slide>
+        <swiper-slide>
+            <img src="{{ asset('assets/images/img2.jpg') }}" width="100%" height="100%" alt="">
+        </swiper-slide>
+        <swiper-slide>
+            <img src="{{ asset('assets/images/img3.avif') }}" width="100%" height="100%" alt="">
+        </swiper-slide>
+        <swiper-slide>
+            <img src="{{ asset('assets/images/img4.jpg') }}" width="100%" height="100%" alt="">
+        </swiper-slide>
+        <swiper-slide>
+            <img src="{{ asset('assets/images/img5.jpg') }}" width="100%" height="100%" alt="">
+        </swiper-slide>
+    </swiper-container>
     <<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
   <div class="relative mx-auto w-full">
 	<a href="#" class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
